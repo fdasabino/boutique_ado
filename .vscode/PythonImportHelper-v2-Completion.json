@@ -595,6 +595,24 @@
         "documentation": {}
     },
     {
+        "label": "ProductAdmin",
+        "kind": 6,
+        "importPath": "products.admin",
+        "description": "products.admin",
+        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = (\n        'sku',\n        'name',\n        'category',\n        'price',\n        'rating',\n        'image',\n    )\n    ordering = ('sku',)",
+        "detail": "products.admin",
+        "documentation": {}
+    },
+    {
+        "label": "CategoryAdmin",
+        "kind": 6,
+        "importPath": "products.admin",
+        "description": "products.admin",
+        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = (\n        'friendly_name',\n        'name',\n    )\nadmin.site.register(Product, ProductAdmin)\nadmin.site.register(Category, CategoryAdmin)",
+        "detail": "products.admin",
+        "documentation": {}
+    },
+    {
         "label": "ProductsConfig",
         "kind": 6,
         "importPath": "products.apps",
@@ -608,7 +626,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=254)\n    friendly_name = models.CharField(max_length=254, null=True, blank=True)\n    def __str__(self):\n        return self.name\n    def get_friendly_name(self):\n        return self.friendly_name\nclass Product(models.Model):\n    category = models.ForeignKey(\n        'Category', null=True, blank=True, on_delete=models.SET_NULL)",
+        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=254)\n    friendly_name = models.CharField(max_length=254, null=True, blank=True)\n    class Meta:\n        verbose_name_plural = 'Categories'\n    def __str__(self):\n        return self.name\n    def get_friendly_name(self):\n        return self.friendly_name\nclass Product(models.Model):",
         "detail": "products.models",
         "documentation": {}
     },
