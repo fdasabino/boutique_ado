@@ -64,6 +64,30 @@
         "documentation": {}
     },
     {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -257,14 +281,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -346,6 +362,15 @@
         "description": "bag.apps",
         "peekOfCode": "class BagConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bag'",
         "detail": "bag.apps",
+        "documentation": {}
+    },
+    {
+        "label": "bag_contents",
+        "kind": 2,
+        "importPath": "bag.contexts",
+        "description": "bag.contexts",
+        "peekOfCode": "def bag_contents(request):\n    bag_items = []\n    total = 0\n    product_count = 0\n    if total < settings.FREE_DELIVERY_THRESHOLD:\n        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)\n        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total\n    else:\n        delivery = 0\n        free_delivery_delta = 0",
+        "detail": "bag.contexts",
         "documentation": {}
     },
     {
@@ -614,7 +639,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -623,7 +648,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -632,7 +657,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -641,7 +666,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -650,7 +675,25 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "FREE_DELIVERY_THRESHOLD",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STANDARD_DELIVERY_PERCENTAGE",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
