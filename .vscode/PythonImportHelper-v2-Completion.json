@@ -208,6 +208,14 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -378,7 +386,7 @@
         "kind": 5,
         "importPath": "bag.urls",
         "description": "bag.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.views_bag, name='views_bag'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.views_bag, name='views_bag'),\n    path('add/<item_id>/', views.add_to_bag, name='add_to_bag'),\n]",
         "detail": "bag.urls",
         "documentation": {}
     },
@@ -387,7 +395,16 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def views_bag(request):\n    \"\"\"\n    A view to return the shopping bag content\n    \"\"\"\n    return render(request, 'bag.html')",
+        "peekOfCode": "def views_bag(request):\n    \"\"\"\n    A view to return the shopping bag content\n    \"\"\"\n    return render(request, 'bag.html')\ndef add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    bag = request.session.get('bag', {})",
+        "detail": "bag.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_bag",
+        "kind": 2,
+        "importPath": "bag.views",
+        "description": "bag.views",
+        "peekOfCode": "def add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    bag = request.session.get('bag', {})\n    if item_id in list(bag.keys()):\n        bag[item_id] += quantity\n    else:\n        bag[item_id] = quantity\n    request.session['bag'] = bag",
         "detail": "bag.views",
         "documentation": {}
     },
