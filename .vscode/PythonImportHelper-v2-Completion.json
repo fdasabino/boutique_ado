@@ -693,7 +693,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def all_products(request):\n    \"\"\" A view to show all products, including sorting and search queries \"\"\"\n    products = Product.objects.all()\n    query = None\n    if request.GET:\n        if 'q' in request.GET:\n            query = request.GET['q']\n            if not query:\n                messages.error(\n                    request, \"You didn't enter any search criteria!\")",
+        "peekOfCode": "def all_products(request):  # sourcery skip: merge-nested-ifs\n    \"\"\" A view to show all products, including sorting and search queries \"\"\"\n    products = Product.objects.all()\n    query = None\n    categories = None\n    if request.GET:\n        if 'category' in request.GET:\n            categories = request.GET['category'].split(',')\n            products = products.filter(category__name__in=categories)\n            categories = Category.objects.filter(name__in=categories)",
         "detail": "products.views",
         "documentation": {}
     },
