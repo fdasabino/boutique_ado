@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap');
-
 html {
   height: 100%;
 }
 
 body {
-  background: url(https://github.com/Code-Institute-Solutions/boutique_ado_images/blob/master/pics/homepage_background_cropped.jpg?raw=true) no-repeat center center fixed;
+  background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
   background-size: cover;
   height: calc(100vh - 164px);
   color: #555;
@@ -23,7 +21,6 @@ body {
 
 .logo-font {
   text-transform: uppercase;
-  font-weight: 400;
 }
 
 .main-logo-link {
@@ -60,7 +57,7 @@ body {
 }
 
 .bg-black {
-  background-color: #000 !important;
+  background: #000 !important;
 }
 
 .overlay {
@@ -69,10 +66,14 @@ body {
   top: 0;
   left: 0;
   position: fixed;
-  background: #fff;
+  background: white;
   z-index: -1;
 }
 
+a.category-badge>span.badge:hover {
+  background: #212529 !important;
+  color: #fff !important;
+}
 
 /* -------------------------------- Media Queries */
 
