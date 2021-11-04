@@ -48,6 +48,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -185,6 +193,22 @@
     },
     {
         "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -394,6 +418,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -714,7 +746,16 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"",
+        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nCRISPY_TEMPLATE_PACK = \"bootstrap4\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "CRISPY_TEMPLATE_PACK",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap4\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -966,7 +1007,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "admin.site.site_header = \"BOUTIQUE-ADO ADMIN PORTAL\"\nadmin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "admin.site.site_header = \"BOUTIQUE-ADO ADMIN PORTAL\"\nadmin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -975,7 +1016,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "admin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "admin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -984,7 +1025,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "admin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "admin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -993,7 +1034,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -1085,6 +1126,24 @@
         "description": "checkout.signals",
         "peekOfCode": "def update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on line item delete\n    \"\"\"\n    instance.order.update_total()",
         "detail": "checkout.signals",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "checkout.urls",
+        "description": "checkout.urls",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.checkout, name=\"checkout\"),\n]",
+        "detail": "checkout.urls",
+        "documentation": {}
+    },
+    {
+        "label": "checkout",
+        "kind": 2,
+        "importPath": "checkout.views",
+        "description": "checkout.views",
+        "peekOfCode": "def checkout(request):\n    bag = request.session.get('bag', {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse('products'))\n    order_form = OrderForm()\n    template = 'checkout.html'\n    context = {'order_form': order_form, }\n    return render(request, template, context)",
+        "detail": "checkout.views",
         "documentation": {}
     },
     {
