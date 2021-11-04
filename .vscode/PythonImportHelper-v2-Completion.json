@@ -477,7 +477,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def view_bag(request):\n    \"\"\" A view that renders the bag contents page \"\"\"\n    return render(request, 'bag.html')\ndef add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None\n    if 'product_size' in request.POST:",
+        "peekOfCode": "def view_bag(request):\n    \"\"\" A view that renders the bag contents page \"\"\"\n    return render(request, 'bag.html')\ndef add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -486,7 +486,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None\n    if 'product_size' in request.POST:\n        size = request.POST['product_size']\n    bag = request.session.get('bag', {})\n    if size:",
+        "peekOfCode": "def add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None\n    if 'product_size' in request.POST:\n        size = request.POST['product_size']\n    bag = request.session.get('bag', {})",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -676,6 +676,15 @@
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
         "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MESSAGE_STORAGE",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },

@@ -96,6 +96,9 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+
 WSGI_APPLICATION = "boutique_ado.wsgi.application"
 
 
