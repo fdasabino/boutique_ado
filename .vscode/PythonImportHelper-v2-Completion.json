@@ -8,6 +8,14 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -245,6 +253,15 @@
         "description": "products.models",
         "isExtraImport": true,
         "detail": "products.models",
+        "documentation": {}
+    },
+    {
+        "label": "django.db",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db",
+        "description": "django.db",
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -488,6 +505,30 @@
         "description": "django.db.models",
         "isExtraImport": true,
         "detail": "django.db.models",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_delete",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
         "documentation": {}
     },
     {
@@ -921,6 +962,33 @@
         "documentation": {}
     },
     {
+        "label": "admin.site.site_header",
+        "kind": 5,
+        "importPath": "boutique_ado.urls",
+        "description": "boutique_ado.urls",
+        "peekOfCode": "admin.site.site_header = \"BOUTIQUE-ADO ADMIN PORTAL\"\nadmin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "boutique_ado.urls",
+        "documentation": {}
+    },
+    {
+        "label": "admin.site.site_title",
+        "kind": 5,
+        "importPath": "boutique_ado.urls",
+        "description": "boutique_ado.urls",
+        "peekOfCode": "admin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "boutique_ado.urls",
+        "documentation": {}
+    },
+    {
+        "label": "admin.site.index_title",
+        "kind": 5,
+        "importPath": "boutique_ado.urls",
+        "description": "boutique_ado.urls",
+        "peekOfCode": "admin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "detail": "boutique_ado.urls",
+        "documentation": {}
+    },
+    {
         "label": "urlpatterns",
         "kind": 5,
         "importPath": "boutique_ado.urls",
@@ -948,12 +1016,39 @@
         "documentation": {}
     },
     {
+        "label": "OrderLineItemAdminInline",
+        "kind": 6,
+        "importPath": "checkout.admin",
+        "description": "checkout.admin",
+        "peekOfCode": "class OrderLineItemAdminInline(admin.TabularInline):\n    model = OrderLineItem\n    readonly_fields = ('lineitem_total',)\nclass OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        'order_number',\n        'date',\n        'delivery_cost',\n        'order_total',",
+        "detail": "checkout.admin",
+        "documentation": {}
+    },
+    {
+        "label": "OrderAdmin",
+        "kind": 6,
+        "importPath": "checkout.admin",
+        "description": "checkout.admin",
+        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        'order_number',\n        'date',\n        'delivery_cost',\n        'order_total',\n        'grand_total',\n    )\n    fields = (",
+        "detail": "checkout.admin",
+        "documentation": {}
+    },
+    {
         "label": "CheckoutConfig",
         "kind": 6,
         "importPath": "checkout.apps",
         "description": "checkout.apps",
-        "peekOfCode": "class CheckoutConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"checkout\"",
+        "peekOfCode": "class CheckoutConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"checkout\"\n    def ready(self):\n        import checkout.signals",
         "detail": "checkout.apps",
+        "documentation": {}
+    },
+    {
+        "label": "OrderForm",
+        "kind": 6,
+        "importPath": "checkout.forms",
+        "description": "checkout.forms",
+        "peekOfCode": "class OrderForm(forms.ModelForm):\n    class Meta:\n        model = Order\n        fields = ('full_name', 'email', 'phone_number',\n                  'street_address1', 'street_address2',\n                  'town_or_city', 'postcode', 'country',\n                  'county',)\n    def __init__(self, *args, **kwargs):\n        \"\"\"\n        Add placeholders and classes, remove auto-generated",
+        "detail": "checkout.forms",
         "documentation": {}
     },
     {
@@ -972,6 +1067,24 @@
         "description": "checkout.models",
         "peekOfCode": "class OrderLineItem(models.Model):\n    order = models.ForeignKey(\n        Order,\n        null=False,\n        blank=False,\n        on_delete=models.CASCADE,\n        related_name=\"lineitems\",\n    )\n    product = models.ForeignKey(\n        Product, null=False, blank=False, on_delete=models.CASCADE",
         "detail": "checkout.models",
+        "documentation": {}
+    },
+    {
+        "label": "update_on_save",
+        "kind": 2,
+        "importPath": "checkout.signals",
+        "description": "checkout.signals",
+        "peekOfCode": "def update_on_save(sender, instance, created, **kwargs):\n    \"\"\"\n    Update order total on line item creation/update\n    \"\"\"\n    instance.order.update_total()\n@receiver(post_delete, sender=OrderLineItem)\ndef update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on line item delete\n    \"\"\"",
+        "detail": "checkout.signals",
+        "documentation": {}
+    },
+    {
+        "label": "update_on_delete",
+        "kind": 2,
+        "importPath": "checkout.signals",
+        "description": "checkout.signals",
+        "peekOfCode": "def update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on line item delete\n    \"\"\"\n    instance.order.update_total()",
+        "detail": "checkout.signals",
         "documentation": {}
     },
     {

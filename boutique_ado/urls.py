@@ -5,6 +5,11 @@ from django.urls import include, path
 
 from boutique_ado.settings import MEDIA_URL
 
+admin.site.site_header = "BOUTIQUE-ADO ADMIN PORTAL"
+admin.site.site_title = "Admin Portal"
+admin.site.index_title = "Welcome to Portal"
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("home.urls")),
