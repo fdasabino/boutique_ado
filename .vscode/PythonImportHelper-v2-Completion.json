@@ -112,30 +112,6 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "reverse",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "HttpResponse",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -152,23 +128,15 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
-        "isExtraImport": true,
-        "detail": "django.shortcuts",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -184,7 +152,39 @@
         "documentation": {}
     },
     {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "reverse",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -296,7 +296,7 @@
         "documentation": {}
     },
     {
-        "label": "path",
+        "label": "include",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -304,7 +304,7 @@
         "documentation": {}
     },
     {
-        "label": "include",
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -441,7 +441,7 @@
         "kind": 5,
         "importPath": "bag.templatetags.bag_tools",
         "description": "bag.templatetags.bag_tools",
-        "peekOfCode": "register = template.Library()\n@register.filter(name='calc_subtotal')\ndef calc_subtotal(price, quantity):\n    return price * quantity",
+        "peekOfCode": "register = template.Library()\n@register.filter(name=\"calc_subtotal\")\ndef calc_subtotal(price, quantity):\n    return price * quantity",
         "detail": "bag.templatetags.bag_tools",
         "documentation": {}
     },
@@ -450,7 +450,7 @@
         "kind": 6,
         "importPath": "bag.apps",
         "description": "bag.apps",
-        "peekOfCode": "class BagConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'bag'",
+        "peekOfCode": "class BagConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"bag\"",
         "detail": "bag.apps",
         "documentation": {}
     },
@@ -459,7 +459,7 @@
         "kind": 2,
         "importPath": "bag.contexts",
         "description": "bag.contexts",
-        "peekOfCode": "def bag_contents(request):\n    bag_items = []\n    total = 0\n    product_count = 0\n    bag = request.session.get('bag', {})\n    for item_id, item_data in bag.items():\n        if isinstance(item_data, int):\n            product = get_object_or_404(Product, pk=item_id)\n            total += item_data * product.price\n            product_count += item_data",
+        "peekOfCode": "def bag_contents(request):\n    bag_items = []\n    total = 0\n    product_count = 0\n    bag = request.session.get(\"bag\", {})\n    for item_id, item_data in bag.items():\n        if isinstance(item_data, int):\n            product = get_object_or_404(Product, pk=item_id)\n            total += item_data * product.price\n            product_count += item_data",
         "detail": "bag.contexts",
         "documentation": {}
     },
@@ -468,7 +468,7 @@
         "kind": 5,
         "importPath": "bag.urls",
         "description": "bag.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.view_bag, name='view_bag'),\n    path('add/<item_id>/', views.add_to_bag, name='add_to_bag'),\n    path('adjust/<item_id>/', views.adjust_bag, name='adjust_bag'),\n    path('remove/<item_id>/', views.remove_from_bag, name='remove_from_bag'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.view_bag, name=\"view_bag\"),\n    path(\"add/<item_id>/\", views.add_to_bag, name=\"add_to_bag\"),\n    path(\"adjust/<item_id>/\", views.adjust_bag, name=\"adjust_bag\"),\n    path(\"remove/<item_id>/\", views.remove_from_bag, name=\"remove_from_bag\"),\n]",
         "detail": "bag.urls",
         "documentation": {}
     },
@@ -477,7 +477,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def view_bag(request):\n    \"\"\" A view that renders the bag contents page \"\"\"\n    return render(request, 'bag.html')\ndef add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None",
+        "peekOfCode": "def view_bag(request):\n    \"\"\"A view that renders the bag contents page\"\"\"\n    return render(request, \"bag.html\")\ndef add_to_bag(request, item_id):\n    \"\"\"Add a quantity of the specified product to the shopping bag\"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get(\"quantity\"))\n    redirect_url = request.POST.get(\"redirect_url\")\n    size = None",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -486,7 +486,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def add_to_bag(request, item_id):\n    \"\"\" Add a quantity of the specified product to the shopping bag \"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    redirect_url = request.POST.get('redirect_url')\n    size = None\n    if 'product_size' in request.POST:\n        size = request.POST['product_size']\n    bag = request.session.get('bag', {})",
+        "peekOfCode": "def add_to_bag(request, item_id):\n    \"\"\"Add a quantity of the specified product to the shopping bag\"\"\"\n    product = Product.objects.get(pk=item_id)\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get(\"quantity\"))\n    redirect_url = request.POST.get(\"redirect_url\")\n    size = None\n    if \"product_size\" in request.POST:\n        size = request.POST[\"product_size\"]\n    bag = request.session.get(\"bag\", {})",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -495,7 +495,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def adjust_bag(request, item_id):\n    \"\"\"Adjust the quantity of the specified product to the specified amount\"\"\"\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get('quantity'))\n    size = None\n    if 'product_size' in request.POST:\n        size = request.POST['product_size']\n    bag = request.session.get('bag', {})\n    if size:\n        if quantity > 0:",
+        "peekOfCode": "def adjust_bag(request, item_id):\n    \"\"\"Adjust the quantity of the specified product to the specified amount\"\"\"\n    product = get_object_or_404(Product, pk=item_id)\n    quantity = int(request.POST.get(\"quantity\"))\n    size = None\n    if \"product_size\" in request.POST:\n        size = request.POST[\"product_size\"]\n    bag = request.session.get(\"bag\", {})\n    if size:\n        if quantity > 0:",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -504,7 +504,7 @@
         "kind": 2,
         "importPath": "bag.views",
         "description": "bag.views",
-        "peekOfCode": "def remove_from_bag(request, item_id):\n    \"\"\"Remove the item from the shopping bag\"\"\"\n    try:\n        product = get_object_or_404(Product, pk=item_id)\n        size = None\n        if 'product_size' in request.POST:\n            size = request.POST['product_size']\n        bag = request.session.get('bag', {})\n        if size:\n            del bag[item_id]['items_by_size'][size]",
+        "peekOfCode": "def remove_from_bag(request, item_id):\n    \"\"\"Remove the item from the shopping bag\"\"\"\n    try:\n        product = get_object_or_404(Product, pk=item_id)\n        size = None\n        if \"product_size\" in request.POST:\n            size = request.POST[\"product_size\"]\n        bag = request.session.get(\"bag\", {})\n        if size:\n            del bag[item_id][\"items_by_size\"][size]",
         "detail": "bag.views",
         "documentation": {}
     },
@@ -576,7 +576,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'\nACCOUNT_AUTHENTICATION_METHOD = 'username_email'",
+        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -585,7 +585,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'\nACCOUNT_AUTHENTICATION_METHOD = 'username_email'\nACCOUNT_EMAIL_REQUIRED = True",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -594,7 +594,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SITE_ID = 1\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'\nACCOUNT_AUTHENTICATION_METHOD = 'username_email'\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = 'mandatory'\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [",
+        "peekOfCode": "SITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -603,7 +603,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'\nACCOUNT_AUTHENTICATION_METHOD = 'username_email'\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = 'mandatory'\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {",
+        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -612,7 +612,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_AUTHENTICATION_METHOD = 'username_email'\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = 'mandatory'\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",",
+        "peekOfCode": "ACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -621,7 +621,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = 'mandatory'\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [",
+        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -630,7 +630,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = 'mandatory'\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),",
+        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -639,7 +639,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),",
+        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -648,7 +648,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],",
+        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -657,7 +657,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_URL = '/accounts/login'\nLOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,",
+        "peekOfCode": "LOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -666,7 +666,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = '/'\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {",
+        "peekOfCode": "LOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -684,7 +684,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}",
+        "peekOfCode": "MESSAGE_STORAGE = \"django.contrib.messages.storage.session.SessionStorage\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -720,7 +720,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -729,7 +729,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -738,7 +738,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -747,7 +747,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -756,7 +756,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -765,7 +765,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -774,7 +774,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -783,7 +783,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -828,7 +828,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path('', include('home.urls')),\n    path('accounts/', include('allauth.urls')),\n    path('products/', include('products.urls')),\n    path('bag/', include('bag.urls')),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -846,7 +846,7 @@
         "kind": 6,
         "importPath": "home.apps",
         "description": "home.apps",
-        "peekOfCode": "class HomeConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'home'",
+        "peekOfCode": "class HomeConfig(AppConfig):\n    default_auto_field = \"django.db.models.BigAutoField\"\n    name = \"home\"",
         "detail": "home.apps",
         "documentation": {}
     },
@@ -855,7 +855,7 @@
         "kind": 5,
         "importPath": "home.urls",
         "description": "home.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.index, name='home'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.index, name=\"home\"),\n]",
         "detail": "home.urls",
         "documentation": {}
     },
@@ -864,7 +864,7 @@
         "kind": 2,
         "importPath": "home.views",
         "description": "home.views",
-        "peekOfCode": "def index(request):\n    \"\"\"\n    A view to return the index page\n    \"\"\"\n    return render(request, 'home/index.html')",
+        "peekOfCode": "def index(request):\n    \"\"\"\n    A view to return the index page\n    \"\"\"\n    return render(request, \"home/index.html\")",
         "detail": "home.views",
         "documentation": {}
     },
@@ -873,7 +873,7 @@
         "kind": 6,
         "importPath": "products.migrations.0001_initial",
         "description": "products.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(max_length=254)),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = []\n    operations = [\n        migrations.CreateModel(\n            name=\"Category\",\n            fields=[\n                (\n                    \"id\",\n                    models.BigAutoField(",
         "detail": "products.migrations.0001_initial",
         "documentation": {}
     },
@@ -882,7 +882,7 @@
         "kind": 6,
         "importPath": "products.migrations.0002_product_has_sizes",
         "description": "products.migrations.0002_product_has_sizes",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('products', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='product',\n            name='has_sizes',\n            field=models.BooleanField(default=False),\n        ),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"products\", \"0001_initial\"),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name=\"product\",\n            name=\"has_sizes\",\n            field=models.BooleanField(default=False),\n        ),",
         "detail": "products.migrations.0002_product_has_sizes",
         "documentation": {}
     },
@@ -891,7 +891,7 @@
         "kind": 6,
         "importPath": "products.admin",
         "description": "products.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = (\n        'sku',\n        'name',\n        'category',\n        'price',\n        'rating',\n        'image',\n    )\n    ordering = ('sku',)",
+        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = (\n        \"sku\",\n        \"name\",\n        \"category\",\n        \"price\",\n        \"rating\",\n        \"image\",\n    )\n    ordering = (\"sku\",)",
         "detail": "products.admin",
         "documentation": {}
     },
@@ -900,7 +900,7 @@
         "kind": 6,
         "importPath": "products.admin",
         "description": "products.admin",
-        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = (\n        'friendly_name',\n        'name',\n    )\nadmin.site.register(Product, ProductAdmin)\nadmin.site.register(Category, CategoryAdmin)",
+        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = (\n        \"friendly_name\",\n        \"name\",\n    )\nadmin.site.register(Product, ProductAdmin)\nadmin.site.register(Category, CategoryAdmin)",
         "detail": "products.admin",
         "documentation": {}
     },
@@ -909,7 +909,7 @@
         "kind": 6,
         "importPath": "products.apps",
         "description": "products.apps",
-        "peekOfCode": "class ProductsConfig(AppConfig):\n    name = 'products'",
+        "peekOfCode": "class ProductsConfig(AppConfig):\n    name = \"products\"",
         "detail": "products.apps",
         "documentation": {}
     },
@@ -918,7 +918,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=254)\n    friendly_name = models.CharField(max_length=254, null=True, blank=True)\n    class Meta:\n        verbose_name_plural = 'Categories'\n    def __str__(self):\n        return self.name\n    def get_friendly_name(self):\n        return self.friendly_name\nclass Product(models.Model):",
+        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=254)\n    friendly_name = models.CharField(max_length=254, null=True, blank=True)\n    class Meta:\n        verbose_name_plural = \"Categories\"\n    def __str__(self):\n        return self.name\n    def get_friendly_name(self):\n        return self.friendly_name\nclass Product(models.Model):",
         "detail": "products.models",
         "documentation": {}
     },
@@ -927,7 +927,7 @@
         "kind": 6,
         "importPath": "products.models",
         "description": "products.models",
-        "peekOfCode": "class Product(models.Model):\n    category = models.ForeignKey(\n        'Category', null=True, blank=True, on_delete=models.SET_NULL)\n    sku = models.CharField(max_length=254, null=True, blank=True)\n    name = models.CharField(max_length=254)\n    description = models.TextField()\n    has_sizes = models.BooleanField(default=False)\n    price = models.DecimalField(max_digits=6, decimal_places=2)\n    rating = models.DecimalField(\n        max_digits=6, decimal_places=2, null=True, blank=True)",
+        "peekOfCode": "class Product(models.Model):\n    category = models.ForeignKey(\n        \"Category\", null=True, blank=True, on_delete=models.SET_NULL\n    )\n    sku = models.CharField(max_length=254, null=True, blank=True)\n    name = models.CharField(max_length=254)\n    description = models.TextField()\n    has_sizes = models.BooleanField(default=False)\n    price = models.DecimalField(max_digits=6, decimal_places=2)\n    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)",
         "detail": "products.models",
         "documentation": {}
     },
@@ -936,7 +936,7 @@
         "kind": 5,
         "importPath": "products.urls",
         "description": "products.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.all_products, name='products'),\n    path('<product_id>', views.product_detail, name='product_detail'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.all_products, name=\"products\"),\n    path(\"<product_id>\", views.product_detail, name=\"product_detail\"),\n]",
         "detail": "products.urls",
         "documentation": {}
     },
@@ -945,7 +945,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def all_products(request):\n    \"\"\" A view to show all products, including sorting and search queries \"\"\"\n    products = Product.objects.all()\n    query = None\n    categories = None\n    sort = None\n    direction = None\n    if request.GET:\n        if 'sort' in request.GET:\n            sortkey = request.GET['sort']",
+        "peekOfCode": "def all_products(request):\n    \"\"\"A view to show all products, including sorting and search queries\"\"\"\n    products = Product.objects.all()\n    query = None\n    categories = None\n    sort = None\n    direction = None\n    if request.GET:\n        if \"sort\" in request.GET:\n            sortkey = request.GET[\"sort\"]",
         "detail": "products.views",
         "documentation": {}
     },
@@ -954,7 +954,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\" A view to show individual product details \"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        'product': product,\n    }\n    return render(request, 'product_detail.html', context)",
+        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)",
         "detail": "products.views",
         "documentation": {}
     },
