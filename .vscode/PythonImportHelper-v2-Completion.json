@@ -1,5 +1,13 @@
 [
     {
+        "label": "template",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -420,6 +428,24 @@
         "documentation": {}
     },
     {
+        "label": "calc_subtotal",
+        "kind": 2,
+        "importPath": "bag.templatetags.bag_tools",
+        "description": "bag.templatetags.bag_tools",
+        "peekOfCode": "def calc_subtotal(price, quantity):\n    return price * quantity",
+        "detail": "bag.templatetags.bag_tools",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 5,
+        "importPath": "bag.templatetags.bag_tools",
+        "description": "bag.templatetags.bag_tools",
+        "peekOfCode": "register = template.Library()\n@register.filter(name='calc_subtotal')\ndef calc_subtotal(price, quantity):\n    return price * quantity",
+        "detail": "bag.templatetags.bag_tools",
+        "documentation": {}
+    },
+    {
         "label": "BagConfig",
         "kind": 6,
         "importPath": "bag.apps",
@@ -442,7 +468,7 @@
         "kind": 5,
         "importPath": "bag.urls",
         "description": "bag.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.view_bag, name='views_bag'),\n    path('add/<item_id>/', views.add_to_bag, name='add_to_bag'),\n    path('adjust/<item_id>/', views.adjust_bag, name='adjust_bag'),\n    path('remove/<item_id>/', views.remove_from_bag, name='remove_from_bag'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.view_bag, name='view_bag'),\n    path('add/<item_id>/', views.add_to_bag, name='add_to_bag'),\n    path('adjust/<item_id>/', views.adjust_bag, name='adjust_bag'),\n    path('remove/<item_id>/', views.remove_from_bag, name='remove_from_bag'),\n]",
         "detail": "bag.urls",
         "documentation": {}
     },
