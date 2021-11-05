@@ -1142,7 +1142,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def checkout(request):\n    bag = request.session.get('bag', {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse('products'))\n    order_form = OrderForm()\n    template = 'checkout.html'\n    context = {'order_form': order_form, }\n    return render(request, template, context)",
+        "peekOfCode": "def checkout(request):\n    bag = request.session.get('bag', {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse('products'))\n    order_form = OrderForm()\n    template = 'checkout.html'\n    context = {\n        'order_form': order_form,\n        'stripe_public_key': 'pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC',",
         "detail": "checkout.views",
         "documentation": {}
     },
