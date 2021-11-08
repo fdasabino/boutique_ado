@@ -5,11 +5,11 @@
     https://stripe.com/docs/stripe-js
 */
 
-var stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
-var client_secret = $('#id_client_secret').text().slice(1, -1);
-var stripe = Stripe(stripe_public_key);
-var elements = stripe.elements();
-var style = {
+const stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+const clientSecret = $('#id_client_secret').text().slice(1, -1);
+const stripe = Stripe(stripePublicKey);
+const elements = stripe.elements();
+const style = {
   base: {
     color: '#000',
     fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
@@ -24,7 +24,55 @@ var style = {
     iconColor: '#dc3545'
   }
 };
-var card = elements.create('card', {
+const card = elements.create('card', {
   style
 });
 card.mount('#card-element');
+
+// Handle realtime validation errors on the card element
+card.addEventListener('change', (event) => {
+  const errorDiv = document.getElementById('card-errors');
+  if (event.error) {
+    const html = `
+        <span class="icon" role="alert">
+            <i class="fas fa-times"></i>
+        </span>
+        <span>${event.error.message}</span>
+    `;
+    $(errorDiv).html(html);
+  } else {
+    errorDiv.textContent = '';
+  }
+});
+
+// Handle form submit
+const form = document.getElementById('payment-form');
+
+form.addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  card.update({
+    'disabled': true
+  });
+  $('#submit-button').attr('disabled', true);
+  stripe.confirmCardPayment(clientSecret, {
+    payment_method: {
+      card,
+    }
+  }).then((result) => {
+    if (result.error) {
+      const errorDiv = document.getElementById('card-errors');
+      const html = `
+      <span class="icon" role="alert">
+      <i class="fas fa-times"></i>
+      </span>
+      <span>${result.error.message}</span>`;
+      $(errorDiv).html(html);
+      card.update({
+        'disabled': false
+      });
+      $('#submit-button').attr('disabled', false);
+    } else if (result.paymentIntent.status === 'succeeded') {
+      form.submit();
+    }
+  });
+});

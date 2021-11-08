@@ -144,6 +144,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -192,7 +200,7 @@
         "documentation": {}
     },
     {
-        "label": "render",
+        "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -200,7 +208,7 @@
         "documentation": {}
     },
     {
-        "label": "redirect",
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -498,6 +506,14 @@
         "documentation": {}
     },
     {
+        "label": "STRIPE_CURRENCY",
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "isExtraImport": true,
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
         "label": "get_wsgi_application",
         "importPath": "django.core.wsgi",
         "description": "django.core.wsgi",
@@ -540,7 +556,7 @@
         "documentation": {}
     },
     {
-        "label": "post_save",
+        "label": "post_delete",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
         "isExtraImport": true,
@@ -548,7 +564,7 @@
         "documentation": {}
     },
     {
-        "label": "post_delete",
+        "label": "post_save",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
         "isExtraImport": true,
@@ -561,6 +577,23 @@
         "description": "django.dispatch",
         "isExtraImport": true,
         "detail": "django.dispatch",
+        "documentation": {}
+    },
+    {
+        "label": "stripe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "stripe",
+        "description": "stripe",
+        "detail": "stripe",
+        "documentation": {}
+    },
+    {
+        "label": "bag_contents",
+        "importPath": "bag.contexts",
+        "description": "bag.contexts",
+        "isExtraImport": true,
+        "detail": "bag.contexts",
         "documentation": {}
     },
     {
@@ -692,7 +725,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = \"django-insecure-+i&34a8e8k4d$#*+d%d)8fel4_f_*apdchrz)2n$=8zfkr@268\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -701,7 +734,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SECRET_KEY = \"django-insecure-+i&34a8e8k4d$#*+d%d)8fel4_f_*apdchrz)2n$=8zfkr@268\"\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -944,7 +977,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -953,7 +986,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -962,7 +995,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -971,7 +1004,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -980,7 +1013,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -989,7 +1022,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -998,7 +1031,43 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STRIPE_CURRENCY",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STRIPE_PUBLISHABLE_KEY",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STRIPE_PUBLISHABLE_KEY = os.environ.get(\"STRIPE_PUBLISHABLE_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STRIPE_SECRET_KEY",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STRIPE_ENDPOINT_SECRET",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STRIPE_ENDPOINT_SECRET = os.environ.get(\"STRIPE_ENDPOINT_SECRET\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1061,7 +1130,7 @@
         "kind": 6,
         "importPath": "checkout.admin",
         "description": "checkout.admin",
-        "peekOfCode": "class OrderLineItemAdminInline(admin.TabularInline):\n    model = OrderLineItem\n    readonly_fields = ('lineitem_total',)\nclass OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        'order_number',\n        'date',\n        'delivery_cost',\n        'order_total',",
+        "peekOfCode": "class OrderLineItemAdminInline(admin.TabularInline):\n    model = OrderLineItem\n    readonly_fields = (\"lineitem_total\",)\nclass OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        \"order_number\",\n        \"date\",\n        \"delivery_cost\",\n        \"order_total\",",
         "detail": "checkout.admin",
         "documentation": {}
     },
@@ -1070,7 +1139,7 @@
         "kind": 6,
         "importPath": "checkout.admin",
         "description": "checkout.admin",
-        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        'order_number',\n        'date',\n        'delivery_cost',\n        'order_total',\n        'grand_total',\n    )\n    fields = (",
+        "peekOfCode": "class OrderAdmin(admin.ModelAdmin):\n    inlines = (OrderLineItemAdminInline,)\n    readonly_fields = (\n        \"order_number\",\n        \"date\",\n        \"delivery_cost\",\n        \"order_total\",\n        \"grand_total\",\n    )\n    fields = (",
         "detail": "checkout.admin",
         "documentation": {}
     },
@@ -1142,7 +1211,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def checkout(request):\n    bag = request.session.get('bag', {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse('products'))\n    order_form = OrderForm()\n    template = 'checkout.html'\n    context = {\n        'order_form': order_form,\n        'stripe_public_key': 'pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC',",
+        "peekOfCode": "def checkout(request):\n    stripe_public_key = os.environ[\"STRIPE_PUBLISHABLE_KEY\"]\n    stripe_secret_key = os.environ[\"STRIPE_SECRET_KEY\"]\n    bag = request.session.get(\"bag\", {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse(\"products\"))\n    current_bag = bag_contents(request)\n    total = current_bag[\"grand_total\"]\n    stripe_total = round(total * 100)",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1270,6 +1339,42 @@
         "description": "products.views",
         "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)",
         "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"SECRET_KEY\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"django-insecure-+i&34a8e8k4d$#*\"\n# stripe\nos.environ[\n    \"STRIPE_SECRET_KEY\"\n] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"STRIPE_ENDPOINT_SECRET\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
+        "detail": "env",
         "documentation": {}
     },
     {

@@ -1,7 +1,26 @@
 {
-  "cSpell.words": [
-    "Bulma",
-    "SIGNUP"
+  "editor.formatOnSave": true,
+  "python.pythonPath": "c:\\Users\\fdasa\\Desktop\\School_Stuff\\ecommerce-p5\\venv\\Scripts\\python.exe",
+  "python.sortImports.args": [
+    "--profile=black",
   ],
-  "python.pythonPath": "c:\\Users\\fdasa\\Desktop\\School_Stuff\\boutique_ado\\venv\\Scripts\\python.exe"
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length=119"
+  ],
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  // Django Extension
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "cSpell.words": [
+    "Neue"
+  ],
 }
