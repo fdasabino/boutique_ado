@@ -1121,7 +1121,7 @@
         "kind": 6,
         "importPath": "checkout.migrations.0001_initial",
         "description": "checkout.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('products', '0003_alter_category_options'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Order',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        (\"products\", \"0003_alter_category_options\"),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name=\"Order\",\n            fields=[\n                (",
         "detail": "checkout.migrations.0001_initial",
         "documentation": {}
     },
@@ -1157,7 +1157,7 @@
         "kind": 6,
         "importPath": "checkout.forms",
         "description": "checkout.forms",
-        "peekOfCode": "class OrderForm(forms.ModelForm):\n    class Meta:\n        model = Order\n        fields = ('full_name', 'email', 'phone_number',\n                  'street_address1', 'street_address2',\n                  'town_or_city', 'postcode', 'country',\n                  'county',)\n    def __init__(self, *args, **kwargs):\n        \"\"\"\n        Add placeholders and classes, remove auto-generated",
+        "peekOfCode": "class OrderForm(forms.ModelForm):\n    class Meta:\n        model = Order\n        fields = (\n            \"full_name\",\n            \"email\",\n            \"phone_number\",\n            \"street_address1\",\n            \"street_address2\",\n            \"town_or_city\",",
         "detail": "checkout.forms",
         "documentation": {}
     },
@@ -1265,7 +1265,7 @@
         "kind": 6,
         "importPath": "products.migrations.0003_alter_category_options",
         "description": "products.migrations.0003_alter_category_options",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('products', '0002_product_has_sizes'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='category',\n            options={'verbose_name_plural': 'Categories'},\n        ),\n    ]",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        (\"products\", \"0002_product_has_sizes\"),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name=\"category\",\n            options={\"verbose_name_plural\": \"Categories\"},\n        ),\n    ]",
         "detail": "products.migrations.0003_alter_category_options",
         "documentation": {}
     },

@@ -1,11 +1,12 @@
 import os
 
 import stripe
-from bag.contexts import bag_contents
-from boutique_ado.settings import STRIPE_CURRENCY
 from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import redirect, render, reverse
+
+from bag.contexts import bag_contents
+from boutique_ado.settings import STRIPE_CURRENCY
 
 from .forms import OrderForm
 
@@ -32,7 +33,10 @@ def checkout(request):
     order_form = OrderForm()
 
     if not stripe_public_key:
-        messages.warning(request, "Stripe public key is missing. Did you forget to set it in your environment?")
+        messages.warning(
+            request,
+            "Stripe public key is missing. Did you forget to set it in your environment?",
+        )
 
     template = "checkout.html"
     context = {
