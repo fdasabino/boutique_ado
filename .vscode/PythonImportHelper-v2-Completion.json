@@ -605,6 +605,46 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "require_POST",
+        "importPath": "django.views.decorators.http",
+        "description": "django.views.decorators.http",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.http",
+        "documentation": {}
+    },
+    {
+        "label": "StripeWH_Handler",
+        "importPath": "checkout.webhook_handler",
+        "description": "checkout.webhook_handler",
+        "isExtraImport": true,
+        "detail": "checkout.webhook_handler",
+        "documentation": {}
+    },
+    {
         "label": "Lower",
         "importPath": "django.db.models.functions",
         "description": "django.db.models.functions",
@@ -1210,7 +1250,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.checkout, name=\"checkout\"),\n    path(\"checkout_success/<order_number>\", views.checkout_success, name=\"checkout_success\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.checkout, name=\"checkout\"),\n    path(\"checkout_success/<order_number>\", views.checkout_success, name=\"checkout_success\"),\n    path(\"wh/\", webhook, name=\"webhook\"),\n]",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -1230,6 +1270,24 @@
         "description": "checkout.views",
         "peekOfCode": "def checkout_success(request, order_number):\n    \"\"\"\n    Handle successful checkouts\n    \"\"\"\n    save_info = request.session.get(\"save_info\")\n    order = get_object_or_404(Order, order_number=order_number)\n    messages.success(\n        request,\n        f\"Order successfully processed! \\\n        Your order number is {order_number}. A confirmation \\",
         "detail": "checkout.views",
+        "documentation": {}
+    },
+    {
+        "label": "webhook",
+        "kind": 2,
+        "importPath": "checkout.webhooks",
+        "description": "checkout.webhooks",
+        "peekOfCode": "def webhook(request):\n    \"\"\"Listen for webhooks from Stripe\"\"\"\n    # Setup\n    STRIPE_ENDPOINT_SECRET = os.environ.get[\"STRIPE_ENDPOINT_SECRET\"]\n    stripe.api_key = os.environ.get[\"STRIPE_SECRET_KEY\"]\n    # Get the webhook data and verify its signature\n    payload = request.body\n    sig_header = request.META[\"HTTP_STRIPE_SIGNATURE\"]\n    event = None\n    try:",
+        "detail": "checkout.webhooks",
+        "documentation": {}
+    },
+    {
+        "label": "StripeWH_Handler",
+        "kind": 6,
+        "importPath": "checkout.webhook_handler",
+        "description": "checkout.webhook_handler",
+        "peekOfCode": "class StripeWH_Handler:\n    \"\"\"Handle Stripe webhooks\"\"\"\n    def __init__(self, request):\n        self.request = request\n    def handle_event(self, event):\n        \"\"\"\n        Handle a generic/unknown/unexpected webhook event\n        \"\"\"\n        return HttpResponse(content=f'Unhandled webhook received: {event[\"type\"]}', status=200)\n    def handle_payment_intent_succeeded(self, event):",
+        "detail": "checkout.webhook_handler",
         "documentation": {}
     },
     {
@@ -1363,7 +1421,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"django-insecure-+i&34a8e8k4d$#*\"\n# stripe\nos.environ[\n    \"STRIPE_SECRET_KEY\"\n] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email",
+        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"django-insecure-+i&34a8e8k4d$#*\"\n# stripe\nos.environ[\n    \"STRIPE_SECRET_KEY\"\n] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email",
         "detail": "env",
         "documentation": {}
     },
@@ -1372,7 +1430,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
+        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLISHABLE_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
         "detail": "env",
         "documentation": {}
     },
@@ -1381,7 +1439,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
+        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
         "detail": "env",
         "documentation": {}
     },
@@ -1390,7 +1448,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_pSQIcDIrrZTMBuUt8bPOuQuYZJFNoGnU\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
+        "peekOfCode": "os.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
         "detail": "env",
         "documentation": {}
     },

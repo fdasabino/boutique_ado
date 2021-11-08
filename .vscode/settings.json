@@ -21,6 +21,7 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
   "cSpell.words": [
-    "Neue"
+    "Neue",
+    "SIGNUP"
   ],
 }
