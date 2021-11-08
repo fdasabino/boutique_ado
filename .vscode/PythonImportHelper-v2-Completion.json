@@ -200,6 +200,14 @@
         "documentation": {}
     },
     {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -261,6 +269,14 @@
         "description": "django.shortcuts",
         "isExtraImport": true,
         "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "products.models",
+        "description": "products.models",
+        "isExtraImport": true,
+        "detail": "products.models",
         "documentation": {}
     },
     {
@@ -499,14 +515,6 @@
     },
     {
         "label": "MEDIA_URL",
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "isExtraImport": true,
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "STRIPE_CURRENCY",
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
         "isExtraImport": true,
@@ -1175,7 +1183,7 @@
         "kind": 6,
         "importPath": "checkout.models",
         "description": "checkout.models",
-        "peekOfCode": "class OrderLineItem(models.Model):\n    order = models.ForeignKey(\n        Order,\n        null=False,\n        blank=False,\n        on_delete=models.CASCADE,\n        related_name=\"lineitems\",\n    )\n    product = models.ForeignKey(\n        Product, null=False, blank=False, on_delete=models.CASCADE",
+        "peekOfCode": "class OrderLineItem(models.Model):\n    order = models.ForeignKey(\n        Order,\n        null=False,\n        blank=False,\n        on_delete=models.CASCADE,\n        related_name=\"lineitems\",\n    )\n    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)\n    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL",
         "detail": "checkout.models",
         "documentation": {}
     },
@@ -1202,7 +1210,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.checkout, name=\"checkout\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.checkout, name=\"checkout\"),\n    path(\"checkout_success/<order_number>\", views.checkout_success, name=\"checkout_success\"),\n]",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -1211,7 +1219,16 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def checkout(request):\n    stripe_public_key = os.environ[\"STRIPE_PUBLISHABLE_KEY\"]\n    stripe_secret_key = os.environ[\"STRIPE_SECRET_KEY\"]\n    bag = request.session.get(\"bag\", {})\n    if not bag:\n        messages.error(request, \"There's nothing in your bag at the moment\")\n        return redirect(reverse(\"products\"))\n    current_bag = bag_contents(request)\n    total = current_bag[\"grand_total\"]\n    stripe_total = round(total * 100)",
+        "peekOfCode": "def checkout(request):  # sourcery skip: move-assign\n    stripe_public_key = os.environ[\"STRIPE_PUBLISHABLE_KEY\"]\n    stripe_secret_key = os.environ[\"STRIPE_SECRET_KEY\"]\n    if request.method == \"POST\":\n        bag = request.session.get(\"bag\", {})\n        form_data = {\n            \"full_name\": request.POST[\"full_name\"],\n            \"email\": request.POST[\"email\"],\n            \"phone_number\": request.POST[\"phone_number\"],\n            \"country\": request.POST[\"country\"],",
+        "detail": "checkout.views",
+        "documentation": {}
+    },
+    {
+        "label": "checkout_success",
+        "kind": 2,
+        "importPath": "checkout.views",
+        "description": "checkout.views",
+        "peekOfCode": "def checkout_success(request, order_number):\n    \"\"\"\n    Handle successful checkouts\n    \"\"\"\n    save_info = request.session.get(\"save_info\")\n    order = get_object_or_404(Order, order_number=order_number)\n    messages.success(\n        request,\n        f\"Order successfully processed! \\\n        Your order number is {order_number}. A confirmation \\",
         "detail": "checkout.views",
         "documentation": {}
     },
