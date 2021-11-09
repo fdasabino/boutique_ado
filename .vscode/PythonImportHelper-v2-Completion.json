@@ -369,6 +369,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -568,6 +576,23 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "django_countries.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django_countries.fields",
+        "description": "django_countries.fields",
+        "detail": "django_countries.fields",
+        "documentation": {}
+    },
+    {
+        "label": "CountryField",
+        "importPath": "django_countries.fields",
+        "description": "django_countries.fields",
+        "isExtraImport": true,
+        "detail": "django_countries.fields",
         "documentation": {}
     },
     {
@@ -1241,6 +1266,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "checkout.migrations.0003_alter_order_country",
+        "description": "checkout.migrations.0003_alter_order_country",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('checkout', '0002_auto_20211109_1107'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='country',\n            field=django_countries.fields.CountryField(max_length=2),\n        ),",
+        "detail": "checkout.migrations.0003_alter_order_country",
+        "documentation": {}
+    },
+    {
         "label": "OrderLineItemAdminInline",
         "kind": 6,
         "importPath": "checkout.admin",
@@ -1281,7 +1315,7 @@
         "kind": 6,
         "importPath": "checkout.models",
         "description": "checkout.models",
-        "peekOfCode": "class Order(models.Model):\n    order_number = models.CharField(max_length=32, null=False, editable=False)\n    full_name = models.CharField(max_length=50, null=False, blank=False)\n    email = models.EmailField(max_length=254, null=False, blank=False)\n    phone_number = models.CharField(max_length=20, null=False, blank=False)\n    country = models.CharField(max_length=40, null=False, blank=False)\n    postcode = models.CharField(max_length=20, null=True, blank=True)\n    town_or_city = models.CharField(max_length=40, null=False, blank=False)\n    street_address1 = models.CharField(max_length=80, null=False, blank=False)\n    street_address2 = models.CharField(max_length=80, null=True, blank=True)",
+        "peekOfCode": "class Order(models.Model):\n    order_number = models.CharField(max_length=32, null=False, editable=False)\n    full_name = models.CharField(max_length=50, null=False, blank=False)\n    email = models.EmailField(max_length=254, null=False, blank=False)\n    phone_number = models.CharField(max_length=20, null=False, blank=False)\n    street_address1 = models.CharField(max_length=80, null=False, blank=False)\n    street_address2 = models.CharField(max_length=80, null=True, blank=True)\n    county = models.CharField(max_length=80, null=True, blank=True)\n    postcode = models.CharField(max_length=20, null=True, blank=True)\n    town_or_city = models.CharField(max_length=40, null=False, blank=False)",
         "detail": "checkout.models",
         "documentation": {}
     },
