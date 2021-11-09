@@ -14,7 +14,7 @@ def webhook(request):
     """Listen for webhooks from Stripe"""
     # Setup
     STRIPE_ENDPOINT_SECRET = os.environ.get["STRIPE_ENDPOINT_SECRET"]
-    stripe.api_key = os.environ.get["STRIPE_SECRET_KEY"]
+    stripe.STRIPE_SECRET_KEY = os.environ.get["STRIPE_SECRET_KEY"]
 
     # Get the webhook data and verify its signature
     payload = request.body
