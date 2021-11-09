@@ -80,6 +80,22 @@
         "documentation": {}
     },
     {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
@@ -152,6 +168,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -273,6 +297,14 @@
     },
     {
         "label": "reverse",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -377,6 +409,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -438,6 +486,38 @@
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
         "documentation": {}
     },
     {
@@ -482,6 +562,14 @@
     },
     {
         "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
+        "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
         "isExtraImport": true,
@@ -596,6 +684,14 @@
         "documentation": {}
     },
     {
+        "label": "CountryField",
+        "importPath": "django_countries.fields",
+        "description": "django_countries.fields",
+        "isExtraImport": true,
+        "detail": "django_countries.fields",
+        "documentation": {}
+    },
+    {
         "label": "uuid",
         "kind": 6,
         "isExtraImport": true,
@@ -621,6 +717,14 @@
         "documentation": {}
     },
     {
+        "label": "UserProfile",
+        "importPath": "profiles.models",
+        "description": "profiles.models",
+        "isExtraImport": true,
+        "detail": "profiles.models",
+        "documentation": {}
+    },
+    {
         "label": "post_delete",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
@@ -634,6 +738,22 @@
         "description": "django.db.models.signals",
         "isExtraImport": true,
         "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "post_save",
+        "importPath": "django.db.models.signals",
+        "description": "django.db.models.signals",
+        "isExtraImport": true,
+        "detail": "django.db.models.signals",
+        "documentation": {}
+    },
+    {
+        "label": "receiver",
+        "importPath": "django.dispatch",
+        "description": "django.dispatch",
+        "isExtraImport": true,
+        "detail": "django.dispatch",
         "documentation": {}
     },
     {
@@ -733,6 +853,14 @@
         "description": "django.db.models.functions",
         "isExtraImport": true,
         "detail": "django.db.models.functions",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
         "documentation": {}
     },
     {
@@ -1216,7 +1344,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "admin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "admin.site.site_title = \"Admin Portal\"\nadmin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n    path(\"profile/\", include(\"profiles.urls\")),",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -1225,7 +1353,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "admin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "admin.site.index_title = \"Welcome to Portal\"\nurlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n    path(\"profile/\", include(\"profiles.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -1234,7 +1362,7 @@
         "kind": 5,
         "importPath": "boutique_ado.urls",
         "description": "boutique_ado.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path(\"admin/\", admin.site.urls),\n    path(\"\", include(\"home.urls\")),\n    path(\"accounts/\", include(\"allauth.urls\")),\n    path(\"products/\", include(\"products.urls\")),\n    path(\"bag/\", include(\"bag.urls\")),\n    path(\"checkout/\", include(\"checkout.urls\")),\n    path(\"profile/\", include(\"profiles.urls\")),\n] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)",
         "detail": "boutique_ado.urls",
         "documentation": {}
     },
@@ -1272,6 +1400,15 @@
         "description": "checkout.migrations.0003_alter_order_country",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('checkout', '0002_auto_20211109_1107'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='country',\n            field=django_countries.fields.CountryField(max_length=2),\n        ),",
         "detail": "checkout.migrations.0003_alter_order_country",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "checkout.migrations.0004_order_user_profile",
+        "description": "checkout.migrations.0004_order_user_profile",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('profiles', '0001_initial'),\n        ('checkout', '0003_alter_order_country'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='order',\n            name='user_profile',\n            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='orders', to='profiles.userprofile'),",
+        "detail": "checkout.migrations.0004_order_user_profile",
         "documentation": {}
     },
     {
@@ -1315,7 +1452,7 @@
         "kind": 6,
         "importPath": "checkout.models",
         "description": "checkout.models",
-        "peekOfCode": "class Order(models.Model):\n    order_number = models.CharField(max_length=32, null=False, editable=False)\n    full_name = models.CharField(max_length=50, null=False, blank=False)\n    email = models.EmailField(max_length=254, null=False, blank=False)\n    phone_number = models.CharField(max_length=20, null=False, blank=False)\n    street_address1 = models.CharField(max_length=80, null=False, blank=False)\n    street_address2 = models.CharField(max_length=80, null=True, blank=True)\n    county = models.CharField(max_length=80, null=True, blank=True)\n    postcode = models.CharField(max_length=20, null=True, blank=True)\n    town_or_city = models.CharField(max_length=40, null=False, blank=False)",
+        "peekOfCode": "class Order(models.Model):\n    order_number = models.CharField(max_length=32, null=False, editable=False)\n    user_profile = models.ForeignKey(\n        UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name=\"orders\"\n    )\n    full_name = models.CharField(max_length=50, null=False, blank=False)\n    email = models.EmailField(max_length=254, null=False, blank=False)\n    phone_number = models.CharField(max_length=20, null=False, blank=False)\n    country = CountryField(blank_label=\"Country *\", null=False, blank=False)\n    postcode = models.CharField(max_length=20, null=True, blank=True)",
         "detail": "checkout.models",
         "documentation": {}
     },
@@ -1324,7 +1461,7 @@
         "kind": 6,
         "importPath": "checkout.models",
         "description": "checkout.models",
-        "peekOfCode": "class OrderLineItem(models.Model):\n    order = models.ForeignKey(\n        Order,\n        null=False,\n        blank=False,\n        on_delete=models.CASCADE,\n        related_name=\"lineitems\",\n    )\n    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)\n    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL",
+        "peekOfCode": "class OrderLineItem(models.Model):\n    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name=\"lineitems\")\n    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)\n    product_size = models.CharField(max_length=2, null=True, blank=True)  # XS, S, M, L, XL\n    quantity = models.IntegerField(null=False, blank=False, default=0)\n    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)\n    def save(self, *args, **kwargs):\n        \"\"\"\n        Override the original save method to set the lineitem total\n        and update the order total.",
         "detail": "checkout.models",
         "documentation": {}
     },
@@ -1524,6 +1661,60 @@
         "description": "products.views",
         "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)",
         "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "profiles.migrations.0001_initial",
+        "description": "profiles.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserProfile',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "detail": "profiles.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "ProfilesConfig",
+        "kind": 6,
+        "importPath": "profiles.apps",
+        "description": "profiles.apps",
+        "peekOfCode": "class ProfilesConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'profiles'",
+        "detail": "profiles.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfile",
+        "kind": 6,
+        "importPath": "profiles.models",
+        "description": "profiles.models",
+        "peekOfCode": "class UserProfile(models.Model):\n    \"\"\"\n    A user profile model for maintaining default\n    delivery information and order history\n    \"\"\"\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    default_phone_number = models.CharField(max_length=20, null=True, blank=True)\n    default_country = CountryField(blank_label=\"Country *\", null=True, blank=True)\n    default_postcode = models.CharField(max_length=20, null=True, blank=True)\n    default_town_or_city = models.CharField(max_length=40, null=True, blank=True)",
+        "detail": "profiles.models",
+        "documentation": {}
+    },
+    {
+        "label": "create_or_update_user_profile",
+        "kind": 2,
+        "importPath": "profiles.models",
+        "description": "profiles.models",
+        "peekOfCode": "def create_or_update_user_profile(sender, instance, created, **kwargs):\n    \"\"\"\n    Create or update the user profile\n    \"\"\"\n    if created:\n        UserProfile.objects.create(user=instance)\n    # Existing users: just save the profile\n    instance.userprofile.save()",
+        "detail": "profiles.models",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "profiles.urls",
+        "description": "profiles.urls",
+        "peekOfCode": "urlpatterns = [path(\"\", views.profile, name=\"profile\")]",
+        "detail": "profiles.urls",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "kind": 2,
+        "importPath": "profiles.views",
+        "description": "profiles.views",
+        "peekOfCode": "def profile(request):\n    \"\"\"Display the user's profile.\"\"\"\n    template = \"profiles/profile.html\"\n    context = {}\n    return render(request, template, context)",
+        "detail": "profiles.views",
         "documentation": {}
     },
     {
