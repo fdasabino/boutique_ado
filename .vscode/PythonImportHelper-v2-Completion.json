@@ -749,6 +749,22 @@
         "documentation": {}
     },
     {
+        "label": "UserProfile",
+        "importPath": "profiles.models",
+        "description": "profiles.models",
+        "isExtraImport": true,
+        "detail": "profiles.models",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfile",
+        "importPath": "profiles.models",
+        "description": "profiles.models",
+        "isExtraImport": true,
+        "detail": "profiles.models",
+        "documentation": {}
+    },
+    {
         "label": "post_delete",
         "importPath": "django.db.models.signals",
         "description": "django.db.models.signals",
@@ -828,6 +844,14 @@
         "description": "django.views.decorators.http",
         "isExtraImport": true,
         "detail": "django.views.decorators.http",
+        "documentation": {}
+    },
+    {
+        "label": "UserProfileForm",
+        "importPath": "profiles.forms",
+        "description": "profiles.forms",
+        "isExtraImport": true,
+        "detail": "profiles.forms",
         "documentation": {}
     },
     {
@@ -1555,7 +1579,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def checkout_success(request, order_number):\n    \"\"\"\n    Handle successful checkouts\n    \"\"\"\n    save_info = request.session.get(\"save_info\")\n    order = get_object_or_404(Order, order_number=order_number)\n    messages.success(\n        request,\n        f\"Order successfully processed! \\\n        Your order number is {order_number}. A confirmation \\",
+        "peekOfCode": "def checkout_success(request, order_number):\n    \"\"\"\n    Handle successful checkouts\n    \"\"\"\n    save_info = request.session.get(\"save_info\")\n    order = get_object_or_404(Order, order_number=order_number)\n    if request.user.is_authenticated:\n        profile = UserProfile.objects.get(user=request.user)\n        # Attach the user's profile to the order\n        order.user_profile = profile",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1735,7 +1759,7 @@
         "kind": 6,
         "importPath": "profiles.models",
         "description": "profiles.models",
-        "peekOfCode": "class UserProfile(models.Model):\n    \"\"\"\n    A user profile model for maintaining default\n    delivery information and order history\n    \"\"\"\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    default_phone_number = models.CharField(max_length=20, null=True, blank=True)\n    default_country = CountryField(blank_label=\"Country *\", null=True, blank=True)\n    default_postcode = models.CharField(max_length=20, null=True, blank=True)\n    default_town_or_city = models.CharField(max_length=40, null=True, blank=True)",
+        "peekOfCode": "class UserProfile(models.Model):\n    \"\"\"\n    A user profile model for maintaining default\n    delivery information and order history\n    \"\"\"\n    user = models.OneToOneField(User, on_delete=models.CASCADE)\n    default_phone_number = models.CharField(max_length=20, null=True, blank=True)\n    default_street_address1 = models.CharField(max_length=80, null=True, blank=True)\n    default_street_address2 = models.CharField(max_length=80, null=True, blank=True)\n    default_town_or_city = models.CharField(max_length=40, null=True, blank=True)",
         "detail": "profiles.models",
         "documentation": {}
     },
@@ -1753,7 +1777,7 @@
         "kind": 5,
         "importPath": "profiles.urls",
         "description": "profiles.urls",
-        "peekOfCode": "urlpatterns = [path(\"\", views.profile, name=\"profile\")]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.profile, name=\"profile\"),\n    path(\"order_history/<order_number>\", views.order_history, name=\"order_history\"),\n]",
         "detail": "profiles.urls",
         "documentation": {}
     },
@@ -1771,7 +1795,7 @@
         "kind": 2,
         "importPath": "profiles.views",
         "description": "profiles.views",
-        "peekOfCode": "def order_history(request, order_number):\n    order = get_object_or_404(Order, order_number=order_number)\n    messages.info(\n        request,\n        (\n            f\"This is a past confirmation for order number {order_number}. \"\n            \"A confirmation email was sent on the order date.\"\n        ),\n    )\n    template = \"checkout/checkout_success.html\"",
+        "peekOfCode": "def order_history(request, order_number):\n    order = get_object_or_404(Order, order_number=order_number)\n    messages.info(\n        request,\n        (\n            f\"This is a past confirmation for order number {order_number}. \"\n            \"A confirmation email was sent on the order date.\"\n        ),\n    )\n    template = \"checkout_success.html\"",
         "detail": "profiles.views",
         "documentation": {}
     },
