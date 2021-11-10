@@ -192,6 +192,22 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -896,6 +912,22 @@
         "documentation": {}
     },
     {
+        "label": "send_mail",
+        "importPath": "django.core.mail",
+        "description": "django.core.mail",
+        "isExtraImport": true,
+        "detail": "django.core.mail",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_string",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
         "label": "Lower",
         "importPath": "django.db.models.functions",
         "description": "django.db.models.functions",
@@ -917,14 +949,6 @@
         "description": "checkout.models",
         "isExtraImport": true,
         "detail": "checkout.models",
-        "documentation": {}
-    },
-    {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -1336,7 +1360,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1345,7 +1369,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1354,7 +1378,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1363,7 +1387,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1372,7 +1396,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "STRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1381,7 +1405,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1390,7 +1414,16 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")",
+        "peekOfCode": "STRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_FROM_EMAIL",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1534,7 +1567,7 @@
         "kind": 2,
         "importPath": "checkout.signals",
         "description": "checkout.signals",
-        "peekOfCode": "def update_on_save(sender, instance, created, **kwargs):\n    \"\"\"\n    Update order total on line item creation/update\n    \"\"\"\n    instance.order.update_total()\n@receiver(post_delete, sender=OrderLineItem)\ndef update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on line item delete\n    \"\"\"",
+        "peekOfCode": "def update_on_save(sender, instance, created, **kwargs):\n    \"\"\"\n    Update order total on lineitem update/create\n    \"\"\"\n    instance.order.update_total()\n@receiver(post_delete, sender=OrderLineItem)\ndef update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on lineitem delete\n    \"\"\"",
         "detail": "checkout.signals",
         "documentation": {}
     },
@@ -1543,7 +1576,7 @@
         "kind": 2,
         "importPath": "checkout.signals",
         "description": "checkout.signals",
-        "peekOfCode": "def update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on line item delete\n    \"\"\"\n    instance.order.update_total()",
+        "peekOfCode": "def update_on_delete(sender, instance, **kwargs):\n    \"\"\"\n    Update order total on lineitem delete\n    \"\"\"\n    instance.order.update_total()",
         "detail": "checkout.signals",
         "documentation": {}
     },
@@ -1588,7 +1621,7 @@
         "kind": 2,
         "importPath": "checkout.webhooks",
         "description": "checkout.webhooks",
-        "peekOfCode": "def webhook(request):\n    \"\"\"Listen for webhooks from Stripe\"\"\"\n    # Setup\n    STRIPE_ENDPOINT_SECRET = os.environ.get[\"STRIPE_ENDPOINT_SECRET\"]\n    stripe.STRIPE_SECRET_KEY = os.environ.get[\"STRIPE_SECRET_KEY\"]\n    # Get the webhook data and verify its signature\n    payload = request.body\n    sig_header = request.META[\"HTTP_STRIPE_SIGNATURE\"]\n    event = None\n    try:",
+        "peekOfCode": "def webhook(request):\n    \"\"\"Listen for webhooks from Stripe\"\"\"\n    # Setup\n    wh_secret = settings.STRIPE_WH_SECRET\n    stripe.api_key = settings.STRIPE_SECRET_KEY\n    # Get the webhook data and verify its signature\n    payload = request.body\n    sig_header = request.META[\"HTTP_STRIPE_SIGNATURE\"]\n    event = None\n    try:",
         "detail": "checkout.webhooks",
         "documentation": {}
     },
@@ -1597,7 +1630,7 @@
         "kind": 6,
         "importPath": "checkout.webhook_handler",
         "description": "checkout.webhook_handler",
-        "peekOfCode": "class StripeWH_Handler:\n    \"\"\"Handle Stripe webhooks\"\"\"\n    def __init__(self, request):\n        self.request = request\n    def handle_event(self, event):\n        \"\"\"\n        Handle a generic/unknown/unexpected webhook event\n        \"\"\"\n        return HttpResponse(content=f'Unhandled webhook received: {event[\"type\"]}', status=200)\n    def handle_payment_intent_succeeded(self, event):",
+        "peekOfCode": "class StripeWH_Handler:\n    \"\"\"Handle Stripe webhooks\"\"\"\n    def __init__(self, request):\n        self.request = request\n    def _send_confirmation_email(self, order):\n        \"\"\"Send the user a confirmation email\"\"\"\n        cust_email = order.email\n        subject = render_to_string(\"checkout/confirmation_emails/confirmation_email_subject.txt\", {\"order\": order})\n        body = render_to_string(\n            \"checkout/confirmation_emails/confirmation_email_body.txt\",",
         "detail": "checkout.webhook_handler",
         "documentation": {}
     },
@@ -1786,7 +1819,7 @@
         "kind": 2,
         "importPath": "profiles.views",
         "description": "profiles.views",
-        "peekOfCode": "def profile(request):\n    \"\"\"Display the user's profile.\"\"\"\n    profile = get_object_or_404(UserProfile, user=request.user)\n    if request.method == \"POST\":\n        form = UserProfileForm(request.POST, instance=profile)\n        if form.is_valid():\n            form.save()\n            messages.success(request, \"Profile updated successfully\")\n        else:\n            messages.error(request, (\"Update failed. Please ensure \" \"the form is valid.\"))",
+        "peekOfCode": "def profile(request):\n    \"\"\"Display the user's profile.\"\"\"\n    profile = get_object_or_404(UserProfile, user=request.user)\n    if request.method == \"POST\":\n        form = UserProfileForm(request.POST, instance=profile)\n        if form.is_valid():\n            form.save()\n            messages.success(request, \"Profile updated successfully\")\n    form = UserProfileForm(instance=profile)\n    orders = profile.orders.all()",
         "detail": "profiles.views",
         "documentation": {}
     },
@@ -1813,7 +1846,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
+        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
         "detail": "env",
         "documentation": {}
     },
@@ -1822,7 +1855,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
+        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
         "detail": "env",
         "documentation": {}
     },
@@ -1831,7 +1864,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
+        "peekOfCode": "os.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
         "detail": "env",
         "documentation": {}
     },
