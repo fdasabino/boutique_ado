@@ -1171,7 +1171,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ado-boutique.herokuapp.com\", \"localhost\", \"127.0.0.1\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ado-boutique.herokuapp.com\", \"localhost\", \"127.0.0.1\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1180,7 +1180,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ado-boutique.herokuapp.com\", \"localhost\", \"127.0.0.1\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ado-boutique.herokuapp.com\", \"localhost\", \"127.0.0.1\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1297,7 +1297,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:",
+        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1306,7 +1306,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}",
+        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1315,7 +1315,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:",
+        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1324,7 +1324,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {",
+        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1333,7 +1333,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {",
+        "peekOfCode": "LOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1342,7 +1342,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",",
+        "peekOfCode": "LOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1351,7 +1351,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",\n            \"NAME\": os.path.join(BASE_DIR, \"db.sqlite3\"),",
+        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1369,7 +1369,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1378,7 +1378,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1387,7 +1387,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1396,7 +1396,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1405,43 +1405,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "STATIC_URL",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "STATICFILES_DIRS",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "MEDIA_URL",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "MEDIA_ROOT",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")",
+        "peekOfCode": "USE_TZ = True\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1450,7 +1414,43 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_URL",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_URL",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "MEDIA_ROOT",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1459,7 +1459,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1468,7 +1468,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1477,7 +1477,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1486,7 +1486,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1495,7 +1495,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1504,7 +1504,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
