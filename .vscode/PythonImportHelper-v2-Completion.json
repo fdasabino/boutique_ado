@@ -24,6 +24,14 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1713,6 +1721,15 @@
         "description": "products.apps",
         "peekOfCode": "class ProductsConfig(AppConfig):\n    name = \"products\"",
         "detail": "products.apps",
+        "documentation": {}
+    },
+    {
+        "label": "ProductForm",
+        "kind": 6,
+        "importPath": "products.forms",
+        "description": "products.forms",
+        "peekOfCode": "class ProductForm(forms.ModelForm):\n    class Meta:\n        model = Product\n        fields = \"__all__\"\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        categories = Category.objects.all()\n        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]\n        self.fields[\"category\"].choices = friendly_names\n        for field_name, field in self.fields.items():",
+        "detail": "products.forms",
         "documentation": {}
     },
     {
