@@ -1441,7 +1441,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"eu-north-1\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
