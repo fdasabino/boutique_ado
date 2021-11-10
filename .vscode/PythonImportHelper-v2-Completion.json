@@ -216,6 +216,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -1035,6 +1043,48 @@
         "documentation": {}
     },
     {
+        "label": "argparse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "argparse",
+        "description": "argparse",
+        "detail": "argparse",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "jmespath",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "exceptions",
+        "importPath": "jmespath",
+        "description": "jmespath",
+        "isExtraImport": true,
+        "detail": "jmespath",
+        "documentation": {}
+    },
+    {
+        "label": "S3Boto3Storage",
+        "importPath": "storages.backends.s3boto3",
+        "description": "storages.backends.s3boto3",
+        "isExtraImport": true,
+        "detail": "storages.backends.s3boto3",
+        "documentation": {}
+    },
+    {
         "label": "calc_subtotal",
         "kind": 2,
         "importPath": "bag.templatetags.bag_tools",
@@ -1129,7 +1179,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1138,7 +1188,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
+        "peekOfCode": "SECRET_KEY = os.environ[\"SECRET_KEY\"]\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1147,7 +1197,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1372,7 +1422,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1381,7 +1431,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1390,7 +1440,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1399,7 +1449,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")\n    AWS_S3_CUSTOM_DOMAIN = f\"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1408,7 +1458,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Stripe\nFREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")\n    AWS_S3_CUSTOM_DOMAIN = f\"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com\"\n    # Static and media files\n    STATICFILES_STORAGE = \"custom_storages.StaticStorage\"\n    STATICFILES_LOCATION = \"static\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1926,11 +1976,38 @@
         "documentation": {}
     },
     {
+        "label": "main",
+        "kind": 2,
+        "importPath": "venv.Scripts.jp",
+        "description": "venv.Scripts.jp",
+        "peekOfCode": "def main():\n    parser = argparse.ArgumentParser()\n    parser.add_argument('expression')\n    parser.add_argument('-f', '--filename',\n                        help=('The filename containing the input data.  '\n                              'If a filename is not given then data is '\n                              'read from stdin.'))\n    parser.add_argument('--ast', action='store_true',\n                        help=('Pretty print the AST, do not search the data.'))\n    args = parser.parse_args()",
+        "detail": "venv.Scripts.jp",
+        "documentation": {}
+    },
+    {
+        "label": "StaticStorage",
+        "kind": 6,
+        "importPath": "custom_storages",
+        "description": "custom_storages",
+        "peekOfCode": "class StaticStorage(S3Boto3Storage):\n    location = settings.STATICFILES_LOCATION\nclass MediaStorage(S3Boto3Storage):\n    location = settings.MEDIAFILES_LOCATION",
+        "detail": "custom_storages",
+        "documentation": {}
+    },
+    {
+        "label": "MediaStorage",
+        "kind": 6,
+        "importPath": "custom_storages",
+        "description": "custom_storages",
+        "peekOfCode": "class MediaStorage(S3Boto3Storage):\n    location = settings.MEDIAFILES_LOCATION",
+        "detail": "custom_storages",
+        "documentation": {}
+    },
+    {
         "label": "os.environ[\"SECRET_KEY\"]",
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"django-insecure-+i&34a8e8k4d$#*\"\n# stripe\nos.environ[\n    \"STRIPE_SECRET_KEY\"\n] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email",
+        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"django-insecure-+i&34a8e8k4d$#*\"\n# stripe\nos.environ[\n    \"STRIPE_SECRET_KEY\"\n] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# database",
         "detail": "env",
         "documentation": {}
     },
@@ -1939,7 +2016,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[",
+        "peekOfCode": "] = \"sk_test_51JsPKqIMbnzasmYrNAbjvqAqFLPdukzD3gtSBAd6V6UznzXYdQdywsioTJ9ChRgi2EAdm0K2XPSuLMHi4XYc3A8N002J8X3FCE\"\nos.environ[\n    \"STRIPE_PUBLIC_KEY\"\n] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# database\nos.environ[\n    \"DATABASE_URL\"\n] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"\n# AWS",
         "detail": "env",
         "documentation": {}
     },
@@ -1948,7 +2025,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[",
+        "peekOfCode": "] = \"pk_test_51JsPKqIMbnzasmYrbHo2zKpfKK9pI6GizATA3Azerq6dKkNLnt4HDbnWrsTSJlbyA5X3jK8IjqUpcd4bHKng8mC400M23ktapC\"\nos.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# database\nos.environ[\n    \"DATABASE_URL\"\n] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"\n# AWS\nos.environ[\"AWS_ACCESS_KEY_ID\"] = \"AKIAX6KYEG2NNA7NUZXN\"\nos.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"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\"",
         "detail": "env",
         "documentation": {}
     },
@@ -1957,7 +2034,7 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
+        "peekOfCode": "os.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# database\nos.environ[\n    \"DATABASE_URL\"\n] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"\n# AWS\nos.environ[\"AWS_ACCESS_KEY_ID\"] = \"AKIAX6KYEG2NNA7NUZXN\"\nos.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"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\"",
         "detail": "env",
         "documentation": {}
     },
@@ -1966,7 +2043,25 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"",
+        "peekOfCode": "] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"\n# AWS\nos.environ[\"AWS_ACCESS_KEY_ID\"] = \"AKIAX6KYEG2NNA7NUZXN\"\nos.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"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\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"AWS_ACCESS_KEY_ID\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"AWS_ACCESS_KEY_ID\"] = \"AKIAX6KYEG2NNA7NUZXN\"\nos.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"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\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"AWS_SECRET_ACCESS_KEY\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"AWS_SECRET_ACCESS_KEY\"] = \"fim994NuHON36eHEe1pnh6YRyqQ06bdu7mE8A6ae\"",
         "detail": "env",
         "documentation": {}
     },
