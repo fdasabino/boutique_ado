@@ -1763,7 +1763,7 @@
         "kind": 5,
         "importPath": "products.urls",
         "description": "products.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.all_products, name=\"products\"),\n    path(\"<int:product_id>/\", views.product_detail, name=\"product_detail\"),\n    path(\"add/\", views.add_product, name=\"add_product\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.all_products, name=\"products\"),\n    path(\"<int:product_id>/\", views.product_detail, name=\"product_detail\"),\n    path(\"add/\", views.add_product, name=\"add_product\"),\n    path(\"edit/<int:product_id>/\", views.edit_product, name=\"edit_product\"),\n]",
         "detail": "products.urls",
         "documentation": {}
     },
@@ -1791,6 +1791,15 @@
         "importPath": "products.views",
         "description": "products.views",
         "peekOfCode": "def add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES)\n        if form.is_valid():\n            form.save()\n            messages.success(request, \"Successfully added product!\")\n            return redirect(reverse(\"add_product\"))\n        else:\n            messages.error(request, \"Failed to add product. Please ensure the form is valid.\")",
+        "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_product",
+        "kind": 2,
+        "importPath": "products.views",
+        "description": "products.views",
+        "peekOfCode": "def edit_product(request, product_id):\n    \"\"\"Edit a product in the store\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES, instance=product)\n        if form.is_valid():\n            form.save()\n            messages.success(request, \"Successfully updated product!\")\n            return redirect(reverse(\"product_detail\", args=[product.id]))\n        else:",
         "detail": "products.views",
         "documentation": {}
     },
