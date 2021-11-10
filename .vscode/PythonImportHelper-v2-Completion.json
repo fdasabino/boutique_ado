@@ -968,6 +968,22 @@
         "documentation": {}
     },
     {
+        "label": "ClearableFileInput",
+        "importPath": "django.forms.widgets",
+        "description": "django.forms.widgets",
+        "isExtraImport": true,
+        "detail": "django.forms.widgets",
+        "documentation": {}
+    },
+    {
+        "label": "gettext_lazy",
+        "importPath": "django.utils.translation",
+        "description": "django.utils.translation",
+        "isExtraImport": true,
+        "detail": "django.utils.translation",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
@@ -1752,7 +1768,7 @@
         "kind": 6,
         "importPath": "products.forms",
         "description": "products.forms",
-        "peekOfCode": "class ProductForm(forms.ModelForm):\n    class Meta:\n        model = Product\n        fields = \"__all__\"\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        categories = Category.objects.all()\n        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]\n        self.fields[\"category\"].choices = friendly_names\n        for field_name, field in self.fields.items():",
+        "peekOfCode": "class ProductForm(forms.ModelForm):\n    class Meta:\n        model = Product\n        fields = \"__all__\"\n    image = forms.ImageField(label=\"Image\", required=False, widget=CustomClearableFileInput)\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        categories = Category.objects.all()\n        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]\n        self.fields[\"category\"].choices = friendly_names",
         "detail": "products.forms",
         "documentation": {}
     },
@@ -1826,6 +1842,15 @@
         "description": "products.views",
         "peekOfCode": "def delete_product(request, product_id):\n    \"\"\"Delete a product from the store\"\"\"\n    if not request.user.is_superuser:\n        messages.error(request, \"Sorry, only store owners with administrator access can do that.\")\n        return redirect(reverse(\"home\"))\n    product = get_object_or_404(Product, pk=product_id)\n    product.delete()\n    messages.success(request, \"Product deleted!\")\n    return redirect(reverse(\"products\"))",
         "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "CustomClearableFileInput",
+        "kind": 6,
+        "importPath": "products.widgets",
+        "description": "products.widgets",
+        "peekOfCode": "class CustomClearableFileInput(ClearableFileInput):\n    clear_checkbox_label = _(\"Remove\")\n    initial_text = _(\"Current Image\")\n    input_text = _(\"\")\n    template_name = \"custom_widget_templates/custom_clearable_file_input.html\"",
+        "detail": "products.widgets",
         "documentation": {}
     },
     {
