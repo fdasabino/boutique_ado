@@ -682,6 +682,15 @@
         "documentation": {}
     },
     {
+        "label": "dj_database_url",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dj_database_url",
+        "description": "dj_database_url",
+        "detail": "dj_database_url",
+        "documentation": {}
+    },
+    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -1300,7 +1309,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation",
+        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {\"default\": dj_database_url.parse(os.environ[\"DATABASE_URL\"])}",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1309,7 +1318,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {",
+        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {\"default\": dj_database_url.parse(os.environ[\"DATABASE_URL\"])}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1958,6 +1967,15 @@
         "importPath": "env",
         "description": "env",
         "peekOfCode": "os.environ[\"STRIPE_WH_SECRET\"] = \"whsec_KK2oeIzj2EmKGz8PjI18UGqlxNTH3XRl\"\n# email\n# os.environ[\"EMAIL_HOST_USER\"] = \"danielasartshop@gmail.com\"\n# os.environ[\"DEFAULT_FROM_EMAIL\"] = \"boutiqueado@example.com\"\n# os.environ[\"EMAIL_HOST_PASSWORD\"] = \"ulocvjmvpoqrkike\"\n# os.environ[\n#     \"REDIS_TLS_URL\"\n# ] = \"rediss://:pfae4900e8f850544b60493515c23f89bcf9541a07729fca77dc20c35c752277e@ec2-54-220-192-45.eu-west-1.compute.amazonaws.com:26890\"\n# os.environ[\n#     \"REDIS_URL\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "] = \"postgres://wdllysburkcugn:06fbbb26e6b6cbfc4eb4813895be1b882b3d772b3e5593e23ee8e3f250f509da@ec2-54-76-249-45.eu-west-1.compute.amazonaws.com:5432/dem0rmui482jpk\"",
         "detail": "env",
         "documentation": {}
     },
