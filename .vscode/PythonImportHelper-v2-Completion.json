@@ -1422,7 +1422,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1431,7 +1431,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1440,7 +1440,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1449,7 +1449,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")\n    AWS_S3_CUSTOM_DOMAIN = f\"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1458,7 +1458,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")\n    AWS_SECRET_ACCESS_KEY = os.environ.get(\"AWS_SECRET_ACCESS_KEY\")\n    AWS_S3_CUSTOM_DOMAIN = f\"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com\"\n    # Static and media files\n    STATICFILES_STORAGE = \"custom_storages.StaticStorage\"\n    STATICFILES_LOCATION = \"static\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
