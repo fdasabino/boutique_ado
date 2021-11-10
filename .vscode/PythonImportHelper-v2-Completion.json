@@ -682,14 +682,6 @@
         "documentation": {}
     },
     {
-        "label": "Path",
-        "importPath": "pathlib",
-        "description": "pathlib",
-        "isExtraImport": true,
-        "detail": "pathlib",
-        "documentation": {}
-    },
-    {
         "label": "dj_database_url",
         "kind": 6,
         "isExtraImport": true,
@@ -1179,7 +1171,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank.herokuapp.com\",\n    \"127.0.0.1\",",
+        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ckz8780-boutique-ado.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1188,7 +1180,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank.herokuapp.com\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ckz8780-boutique-ado.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1197,7 +1189,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\n    \"boutiqueadofrank.herokuapp.com\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",",
+        "peekOfCode": "DEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"ckz8780-boutique-ado.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1206,7 +1198,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\n    \"boutiqueadofrank.herokuapp.com\",\n    \"127.0.0.1\",\n]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "ALLOWED_HOSTS = [\"ckz8780-boutique-ado.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"django.contrib.sites\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1215,7 +1207,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"django.contrib.sites\",\n    \"home\",\n    \"products\",",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"django.contrib.staticfiles\",\n    \"django.contrib.sites\",\n    \"allauth\",\n    \"allauth.account\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1233,7 +1225,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nCRISPY_TEMPLATE_PACK = \"bootstrap4\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "ROOT_URLCONF = \"boutique_ado.urls\"\nCRISPY_TEMPLATE_PACK = \"bootstrap4\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1242,97 +1234,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap4\"\nAUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "AUTHENTICATION_BACKENDS",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "AUTHENTICATION_BACKENDS = [\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n]\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "SITE_ID",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "SITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "EMAIL_BACKEND",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "ACCOUNT_AUTHENTICATION_METHOD",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "ACCOUNT_EMAIL_REQUIRED",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "ACCOUNT_EMAIL_VERIFICATION",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "ACCOUNT_USERNAME_MIN_LENGTH",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "LOGIN_URL",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_URL = \"/accounts/login\"\nLOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "LOGIN_REDIRECT_URL",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = \"/\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {",
+        "peekOfCode": "CRISPY_TEMPLATE_PACK = \"bootstrap4\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [\n            os.path.join(BASE_DIR, \"templates\"),\n            os.path.join(BASE_DIR, \"templates\", \"allauth\"),\n        ],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1350,7 +1252,97 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MESSAGE_STORAGE = \"django.contrib.messages.storage.session.SessionStorage\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",",
+        "peekOfCode": "MESSAGE_STORAGE = \"django.contrib.messages.storage.session.SessionStorage\"\nAUTHENTICATION_BACKENDS = (\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n)\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "AUTHENTICATION_BACKENDS",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "AUTHENTICATION_BACKENDS = (\n    # Needed to login by username in Django admin, regardless of `allauth`\n    \"django.contrib.auth.backends.ModelBackend\",\n    # `allauth` specific authentication methods, such as login by e-mail\n    \"allauth.account.auth_backends.AuthenticationBackend\",\n)\nSITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SITE_ID",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "SITE_ID = 1\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_BACKEND",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCOUNT_AUTHENTICATION_METHOD",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "ACCOUNT_AUTHENTICATION_METHOD = \"username_email\"\nACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCOUNT_EMAIL_REQUIRED",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "ACCOUNT_EMAIL_REQUIRED = True\nACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCOUNT_EMAIL_VERIFICATION",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "ACCOUNT_EMAIL_VERIFICATION = \"mandatory\"\nACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True\nACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCOUNT_USERNAME_MIN_LENGTH",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "ACCOUNT_USERNAME_MIN_LENGTH = 4\nLOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_URL",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "LOGIN_URL = \"/accounts/login/\"\nLOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {",
+        "detail": "boutique_ado.settings",
+        "documentation": {}
+    },
+    {
+        "label": "LOGIN_REDIRECT_URL",
+        "kind": 5,
+        "importPath": "boutique_ado.settings",
+        "description": "boutique_ado.settings",
+        "peekOfCode": "LOGIN_REDIRECT_URL = \"/\"\nWSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1359,7 +1351,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",\n            \"NAME\": os.path.join(BASE_DIR, \"db.sqlite3\"),",
+        "peekOfCode": "WSGI_APPLICATION = \"boutique_ado.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.0/ref/settings/#databases\nif \"DATABASE_URL\" in os.environ:\n    DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\nelse:\n    DATABASES = {\n        \"default\": {\n            \"ENGINE\": \"django.db.backends.sqlite3\",\n            \"NAME\": os.path.join(BASE_DIR, \"db.sqlite3\"),",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1377,7 +1369,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1386,7 +1378,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
+        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1395,7 +1387,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1404,7 +1396,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1413,7 +1405,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.0/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1422,7 +1414,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1431,7 +1423,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join(BASE_DIR, \"static\"),)\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1440,7 +1432,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"ckz8780-boutique-ado\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1449,16 +1441,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }",
-        "detail": "boutique_ado.settings",
-        "documentation": {}
-    },
-    {
-        "label": "DEFAULT_AUTO_FIELD",
-        "kind": 5,
-        "importPath": "boutique_ado.settings",
-        "description": "boutique_ado.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"EU (Stockholm) eu-north-1\"\n    AWS_ACCESS_KEY_ID = os.environ.get(\"AWS_ACCESS_KEY_ID\")",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"ckz8780-boutique-ado\"\n    AWS_S3_REGION_NAME = \"us-east-1\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1467,7 +1450,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1476,7 +1459,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1485,7 +1468,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1494,7 +1477,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1503,7 +1486,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1512,7 +1495,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
