@@ -1171,7 +1171,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"boutiqueadofrank.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"boutiqueadofrank.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1180,7 +1180,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\", \"\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"boutiqueadofrank.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = \"DEVELOPMENT\" in os.environ\nALLOWED_HOSTS = [\"boutiqueadofrank.herokuapp.com\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1432,7 +1432,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"ckz8780-boutique-ado\"",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1441,7 +1441,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"ckz8780-boutique-ado\"\n    AWS_S3_REGION_NAME = \"us-east-1\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media\")\nif \"USE_AWS\" in os.environ:\n    # Cache control\n    AWS_S3_OBJECT_PARAMETERS = {\n        \"Expires\": \"Thu, 31 Dec 2099 20:00:00 GMT\",\n        \"CacheControl\": \"max-age=94608000\",\n    }\n    # Bucket Config\n    AWS_STORAGE_BUCKET_NAME = \"boutiqueadofrank\"\n    AWS_S3_REGION_NAME = \"eu-north-1\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1450,7 +1450,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "FREE_DELIVERY_THRESHOLD = 50\nSTANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1459,7 +1459,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STANDARD_DELIVERY_PERCENTAGE = 10\nSTRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1468,7 +1468,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_CURRENCY = \"usd\"\nSTRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1477,7 +1477,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_PUBLIC_KEY = os.getenv(\"STRIPE_PUBLIC_KEY\", \"\")\nSTRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_PUBLIC_KEY = os.environ.get(\"STRIPE_PUBLIC_KEY\")\nSTRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1486,7 +1486,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_SECRET_KEY = os.getenv(\"STRIPE_SECRET_KEY\", \"\")\nSTRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_SECRET_KEY = os.environ.get(\"STRIPE_SECRET_KEY\")\nSTRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
@@ -1495,7 +1495,7 @@
         "kind": 5,
         "importPath": "boutique_ado.settings",
         "description": "boutique_ado.settings",
-        "peekOfCode": "STRIPE_WH_SECRET = os.getenv(\"STRIPE_WH_SECRET\", \"\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
+        "peekOfCode": "STRIPE_WH_SECRET = os.environ.get(\"STRIPE_WH_SECRET\")\nDEFAULT_FROM_EMAIL = \"boutiqueado@example.com\"",
         "detail": "boutique_ado.settings",
         "documentation": {}
     },
