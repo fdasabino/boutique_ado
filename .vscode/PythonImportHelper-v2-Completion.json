@@ -944,6 +944,14 @@
         "documentation": {}
     },
     {
+        "label": "ProductForm",
+        "importPath": "products.forms",
+        "description": "products.forms",
+        "isExtraImport": true,
+        "detail": "products.forms",
+        "documentation": {}
+    },
+    {
         "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
@@ -1755,7 +1763,7 @@
         "kind": 5,
         "importPath": "products.urls",
         "description": "products.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"\", views.all_products, name=\"products\"),\n    path(\"<product_id>\", views.product_detail, name=\"product_detail\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.all_products, name=\"products\"),\n    path(\"<int:product_id>/\", views.product_detail, name=\"product_detail\"),\n    path(\"add/\", views.add_product, name=\"add_product\"),\n]",
         "detail": "products.urls",
         "documentation": {}
     },
@@ -1773,7 +1781,16 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)",
+        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)\ndef add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    form = ProductForm()",
+        "detail": "products.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_product",
+        "kind": 2,
+        "importPath": "products.views",
+        "description": "products.views",
+        "peekOfCode": "def add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    form = ProductForm()\n    template = \"add_product.html\"\n    context = {\n        \"form\": form,\n    }\n    return render(request, template, context)",
         "detail": "products.views",
         "documentation": {}
     },
