@@ -936,6 +936,22 @@
         "documentation": {}
     },
     {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
         "label": "Lower",
         "importPath": "django.db.models.functions",
         "description": "django.db.models.functions",
@@ -1781,7 +1797,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)\ndef add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    if request.method == \"POST\":",
+        "peekOfCode": "def product_detail(request, product_id):\n    \"\"\"A view to show individual product details\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    context = {\n        \"product\": product,\n    }\n    return render(request, \"product_detail.html\", context)\n@login_required\ndef add_product(request):\n    \"\"\"Add a product to the store\"\"\"",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1790,7 +1806,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES)\n        if form.is_valid():\n            product = form.save()\n            messages.success(request, \"Successfully added product!\")\n            return redirect(reverse(\"product_detail\", args=[product.id]))\n        else:\n            messages.error(request, \"Failed to add product. Please ensure the form is valid.\")",
+        "peekOfCode": "def add_product(request):\n    \"\"\"Add a product to the store\"\"\"\n    if not request.user.is_superuser:\n        messages.error(request, \"Sorry, only store owners with administrator access can do that.\")\n        return redirect(reverse(\"home\"))\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES)\n        if form.is_valid():\n            product = form.save()\n            messages.success(request, \"Successfully added product!\")",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1799,7 +1815,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def edit_product(request, product_id):\n    \"\"\"Edit a product in the store\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES, instance=product)\n        if form.is_valid():\n            form.save()\n            messages.success(request, \"Successfully updated product!\")\n            return redirect(reverse(\"product_detail\", args=[product.id]))\n        else:",
+        "peekOfCode": "def edit_product(request, product_id):\n    \"\"\"Edit a product in the store\"\"\"\n    if not request.user.is_superuser:\n        messages.error(request, \"Sorry, only store owners with administrator access can do that.\")\n        return redirect(reverse(\"home\"))\n    product = get_object_or_404(Product, pk=product_id)\n    if request.method == \"POST\":\n        form = ProductForm(request.POST, request.FILES, instance=product)\n        if form.is_valid():\n            form.save()",
         "detail": "products.views",
         "documentation": {}
     },
@@ -1808,7 +1824,7 @@
         "kind": 2,
         "importPath": "products.views",
         "description": "products.views",
-        "peekOfCode": "def delete_product(request, product_id):\n    \"\"\"Delete a product from the store\"\"\"\n    product = get_object_or_404(Product, pk=product_id)\n    product.delete()\n    messages.success(request, \"Product deleted!\")\n    return redirect(reverse(\"products\"))",
+        "peekOfCode": "def delete_product(request, product_id):\n    \"\"\"Delete a product from the store\"\"\"\n    if not request.user.is_superuser:\n        messages.error(request, \"Sorry, only store owners with administrator access can do that.\")\n        return redirect(reverse(\"home\"))\n    product = get_object_or_404(Product, pk=product_id)\n    product.delete()\n    messages.success(request, \"Product deleted!\")\n    return redirect(reverse(\"products\"))",
         "detail": "products.views",
         "documentation": {}
     },
